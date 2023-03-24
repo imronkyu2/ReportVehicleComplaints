@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layoutFormReportComplaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        tools:ignore="UselessParent">
+
+        <TextView
+            style="@style/customTextView"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="@string/form_report_complaint"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_error_info_small" />
+
+        <TextView
+            android:id="@+id/createDateTV"
+            style="@style/customTextView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_radius_all_yellow_10dp"
+            android:drawablePadding="10dp"
+            android:gravity="start|center_vertical"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/baseline_calendar_month_24"
+            tools:text="@string/form_report_complaint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_radius_stroke_10dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/selectAVehicleTv"
+                style="@style/customTextView"
+                android:layout_width="match_parent"
+                android:drawablePadding="10dp"
+                android:gravity="start|center_vertical"
+                android:text="@string/select_a_vehicle"
+                android:textSize="14sp"
+                app:drawableEndCompat="@drawable/ic_triangle_down"
+                app:drawableStartCompat="@drawable/ic_truck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vehicleRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:listitem="@layout/adapter_vehicle_list" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_radius_stroke_10dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_notepad"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/noteTitleTV"
+                style="@style/customTextView"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:gravity="center"
+                android:text="@string/complaint_record"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/noteValeTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/noteTitleTV"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="@string/enter_reason_your_complaint"
+                android:maxLines="5"
+                android:textColor="@color/black_424242"
+                android:textSize="12sp"
+                tools:ignore="Autofill,TextFields" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/customTextView"
+            android:layout_marginVertical="15dp"
+            android:gravity="center"
+            android:text="@string/report_document"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/conditionImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:adjustViewBounds="true"
+                android:elevation="1.5dp"
+                app:shapeAppearanceOverlay="@style/circleImage"
+                app:srcCompat="@drawable/image_none"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/buttonTakeImage"
+                style="@style/customStatusTextView"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/conditionImageView"
+                android:text="@string/take_photo"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCreateNewComplaint"
+            style="@style/cutomRadiusYellow"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:text="@string/create_new_complaint_report" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/previewLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/previewImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:adjustViewBounds="true"
+            app:shapeAppearanceOverlay="@style/circleImage"
+            app:srcCompat="@drawable/image_none"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/closePreviewBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/Transparent"
+            app:srcCompat="@drawable/ic_cross_circle"
+            android:layout_alignParentEnd="true"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:indeterminateTint="@color/orange_FE7415"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

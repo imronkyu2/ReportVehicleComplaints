@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_radius_top_10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:elevation="1dp">
+
+    <ImageView
+        android:id="@+id/imageWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_error_info"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleTV"
+        style="@style/customTextView"
+        android:text="@string/complaint_report"
+        android:textSize="14sp"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageWarning"
+        app:layout_constraintTop_toTopOf="@+id/imageWarning"/>
+
+    <TextView
+        android:id="@+id/reportIdTV"
+        style="@style/customTextView"
+        android:layout_width="0dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/black_424242"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageWarning"
+        app:layout_constraintEnd_toStartOf="@+id/statusTV"
+        app:layout_constraintStart_toStartOf="@+id/titleTV"
+        tools:text="reportId" />
+
+
+    <TextView
+        android:id="@+id/dateTV"
+        style="@style/customTextView"
+        android:layout_marginBottom="10dp"
+        tools:text="2023-03-20 10:51:52"
+        app:layout_constraintBottom_toTopOf="@+id/statusTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/statusTV"
+        style="@style/customStatusTextView"
+        tools:text="status"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

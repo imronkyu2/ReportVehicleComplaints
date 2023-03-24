@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".modul.home.adapter.ComplaintReportHistoryAdapter"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginVertical="10dp"
+    android:elevation="5dp"
+    android:background="@drawable/background_radius_all_10dp">
+
+    <include
+        android:id="@+id/includedHeader"
+        layout="@layout/include_header_complaint_report_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/includedBody"
+        layout="@layout/include_body_complaint_report_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"/>
+
+    <include
+        android:id="@+id/includedFooter"
+        layout="@layout/include_footer_complaint_report_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
